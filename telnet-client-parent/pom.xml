@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jsystemtest.systemobjects</groupId>
+	<artifactId>telnet-client-parent</artifactId>
+	<version>1.0.00</version>
+	<packaging>pom</packaging>
+	<properties>
+		<topq.repository.rootUrl>http://maven.top-q.co.il</topq.repository.rootUrl>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jsystemtest</groupId>
+				<artifactId>jsystemCommon</artifactId>
+				<version>6.0.01</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jsystemtest.systemobjects</groupId>
+				<artifactId>cli</artifactId>
+				<version>6.0.01</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jsystemtest</groupId>
+				<artifactId>jsystemApp</artifactId>
+				<version>6.0.01</version>
+			</dependency>
+
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>topq</id>
+			<name>RepositoryProxy</name>
+			<url>${topq.repository.rootUrl}/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>topq</id>
+			<name>RepositoryProxy</name>
+			<url>${topq.repository.rootUrl}/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>topq</id>
+			<url>${topq.repository.rootUrl}/content/groups/public</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>Top-Q_plugin_repo</id>
+			<url>${topq.repository.rootUrl}</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+	<modules>
+		<module>../telnet-client-so</module>
+		<module>../telnet-client-test</module>
+	</modules>
+</project>

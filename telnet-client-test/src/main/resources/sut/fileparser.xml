@@ -1,0 +1,7 @@
+<sut>
+	<FP>		
+		<class>com.aqua.fileParser.FileParser</class>
+		<logFile>C:\\Program Files\\Syslogd\\Logs\\SyslogCatchAll.txt</logFile>	
+	</FP>
+</sut>
+
